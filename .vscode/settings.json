@@ -1,0 +1,9 @@
+{
+    "prettier.printWidth": 120,
+    "arrowParens": "always",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "editor.formatOnSave": true,  // Optional: Tự động định dạng mã khi lưu
+    "files.eol": "\n",  // Optional: Kiểu kết thúc dòng
+      // Các cài đặt Prettier khác ...
+}
