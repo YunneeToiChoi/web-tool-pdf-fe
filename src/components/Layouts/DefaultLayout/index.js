@@ -1,19 +1,19 @@
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
-function DefalutLayout({Children}) {
+import Header from '~/components/Layouts/PartialLayout/Header'; // goi header ra
+import Sidebar from './Sidebar'; // goi sidebar ra
+import Footer from './Footer'; // goi footer ra
+function DefaultLayout({Children}) { // main Layout, children la thg do~ ra luon thay doi, la body
     return (
         <div>
-            <Header />
+            <Header />  {/* cai nay hien thi header  giong voi {{>header}}*/}
             <div class="container">
-                <Sidebar />
+                <Sidebar />   {/* cai nay hien thi Sidebar  giong voi {{>sidebar }} nav trai*/}
                 <div class="content">
-                    {Children}
+                    {Children}   {/* cai nay hien thi Body  giong voi {{{body}}}*/}
                 </div>
             </div>
-            <Footer />
+            <Footer />  {/* cai nay hien thi footer  giong voi {{>footer}}*/}
         </div>
     );
 }
 
-export default DefalutLayout;
+export default DefaultLayout;
