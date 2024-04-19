@@ -21,6 +21,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
+    "build:importCss": "npx tailwindcss -i ./src/input.css -o ./src/components/GlobalStyles/css/tailwind.css --watch",
+    "build:minify":"npx tailwindcss -o ./src/components/GlobalStyles/css/tailwind.css --minify",
     "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
@@ -42,10 +44,14 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
     "babel-plugin-module-resolver": "^5.0.1",
     "customize-cra": "^1.0.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
     "react-app-rewired": "^2.2.1",
     "sass": "^1.75.0",
-    "sass-loader": "^14.2.1"
+    "sass-loader": "^14.2.1",
+    "tailwindcss": "^3.4.3"
   }
 }
