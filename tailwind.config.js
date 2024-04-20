@@ -2,11 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    colors: {
-      'hover-btn-nav':'#242424',
-      'primary-home':'#7961f2',
-    },
     extend: {
+      colors: {
+        'hover-btn-nav':'#242424',
+        'primary-home':'#7961f2',
+      },
       animation: {
         'spin-slow': 'spin 6s linear infinite',
         'fadeIn':'fadeIn 0.2s ease-in',
