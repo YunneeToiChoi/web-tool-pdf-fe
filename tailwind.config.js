@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js,jsx,ts,tsx}'],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     colors: {
       'hover-btn-nav':'#242424',
@@ -39,4 +39,6 @@ module.exports = {
   },
   plugins: [],
 }
+
+
 

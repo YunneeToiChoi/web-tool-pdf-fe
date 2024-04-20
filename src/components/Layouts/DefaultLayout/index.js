@@ -3,15 +3,27 @@ import Sidebar from './Sidebar'; // goi sidebar ra
 import Footer from './Footer'; // goi footer ra
 function DefaultLayout({Children}) { // main Layout, children la thg do~ ra luon thay doi, la body
     return (
-        <div>
-            <Header />  {/* cai nay hien thi header  giong voi {{>header}}*/}
-            <div class="container">
-                <Sidebar />   {/* cai nay hien thi Sidebar  giong voi {{>sidebar }} nav trai*/}
-                <div class="content">
-                    {Children}   {/* cai nay hien thi Body  giong voi {{{body}}}*/}
+        <div class="container-body w-full">
+            <div class="w-full h-screen flex">
+                <div class=" w-1/12 min-w-32 relative">
+                    <div class="pl-6">
+                        <Sidebar></Sidebar>   {/* cai nay hien thi Sidebar  giong voi {{>sidebar }} nav trai*/}
+                    </div>
+                </div>
+                <div class="w-10/12 relative flex flex-col" id="render-body">
+                <header>
+                    <Header />  {/* cai nay hien thi header  giong voi {{>header}}*/}
+                </header>
+                <div class=" flex-1  flex flex-col items-center">
+                    <div class="flex justify-center w-full relative px-12 mt-32">
+                        {Children}   {/* cai nay hien thi Body  giong voi {{{body}}}*/}
+                    </div>
+                    <footer>
+                        <Footer />  {/* cai nay hien thi footer  giong voi {{>footer}}*/}
+                    </footer>
+                </div>
                 </div>
             </div>
-            <Footer />  {/* cai nay hien thi footer  giong voi {{>footer}}*/}
         </div>
     );
 }
