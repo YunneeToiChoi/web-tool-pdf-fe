@@ -1,7 +1,9 @@
 import Header from '~/components/Layouts/PartialLayout/Header'; // goi header ra
 import Sidebar from './Sidebar'; // goi sidebar ra
 import Footer from './Footer'; // goi footer ra
-function DefaultLayout({Children}) { // main Layout, children la thg do~ ra luon thay doi, la body
+import tailwind from '~/components/GlobalStyles/css/tailwind.css'; // goi tailwind
+// const cx = classNames.bind(tailwind);
+function    DefaultLayout({children}) { // main Layout, children la thg do~ ra luon thay doi, la body
     return (
         <div class="container-body w-full">
             <div class="w-full h-screen flex">
@@ -16,7 +18,7 @@ function DefaultLayout({Children}) { // main Layout, children la thg do~ ra luon
                 </header>
                 <div class=" flex-1  flex flex-col items-center">
                     <div class="flex justify-center w-full relative px-12 mt-32">
-                        {Children}   {/* cai nay hien thi Body  giong voi {{{body}}}*/}
+                        {children}   {/* cai nay hien thi Body  giong voi {{{body}}}*/}
                     </div>
                 </div>
                 <footer>
