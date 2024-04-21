@@ -18,10 +18,10 @@ function DefaultLayout({Children}) { // main Layout, children la thg do~ ra luon
                     <div class="flex justify-center w-full relative px-12 mt-32">
                         {Children}   {/* cai nay hien thi Body  giong voi {{{body}}}*/}
                     </div>
-                    <footer>
+                </div>
+                <footer>
                         <Footer />  {/* cai nay hien thi footer  giong voi {{>footer}}*/}
                     </footer>
-                </div>
                 </div>
             </div>
         </div>
