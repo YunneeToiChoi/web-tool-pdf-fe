@@ -1,8 +1,47 @@
-
+import React, { useState, useEffect } from 'react';
+import Signup from '~/components/Layouts/PartialLayout/Signup';
 function Header() {
+    const [formOpen, setFormOpen] = useState(false);
+
+    useEffect(() => {
+        const formRes = document.querySelector('.signUp_form');
+        const overlayRes = document.querySelector('.Overlay_res');
+        const closedRes = document.querySelector('.closed_res');
+        const btnRes = document.querySelector('.btn_res');
+        const boxRes = document.querySelector('.box_form_res');
+
+        const closeForm = () => {
+            overlayRes.classList.remove('animate-fadeIn');
+            formRes.classList.remove('inset-0');
+            boxRes.classList.remove('animate-fadeInRight');
+            overlayRes.classList.add('animate-fadeOut');
+            boxRes.classList.add('animate-fadeOutRight');
+            formRes.classList.add('hidden');
+        };
+
+        const openForm = () => {
+            formRes.classList.remove('hidden');
+            formRes.classList.add('inset-0');
+            overlayRes.classList.add('animate-fadeIn');
+            boxRes.classList.add('animate-fadeInRight');
+            overlayRes.classList.remove('animate-fadeOut');
+            boxRes.classList.remove('animate-fadeOutRight');
+        };
+
+        btnRes.addEventListener('click', openForm);
+        overlayRes.addEventListener('click', closeForm);
+        closedRes.addEventListener('click', closeForm);
+
+        // Clean up event listeners
+        return () => {
+            btnRes.removeEventListener('click', openForm);
+            overlayRes.removeEventListener('click', closeForm);
+            closedRes.removeEventListener('click', closeForm);
+        };
+    }, []);
     return (
-        <div class="relative w-full">
-            <div  class="fixed right-0 left-0 pt-6 px-8 bg-white z-10">
+        <><div class="relative w-full">
+            <div class="fixed right-0 left-0 pt-6 px-8 bg-white z-10">
                 <div class="max-lg:hidden flex flex-col justify-center items-center">
                     <div class="flex justify-between w-full">
                         <div class="flex w-4/6 justify-between min-w-[600px] max-w-[700px]">
@@ -16,20 +55,20 @@ function Header() {
                                 Login
                             </button>
                             <button class="btn_res transition hover:duration-300 ease-in-out delay-75 bg-white hover:bg-[#F9F9F9] duration-300 text-black px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg">
-                            sign up
+                                sign up
                             </button>
                         </div>
                     </div>
                     <div class="border-b-[1px] w-full"></div>
                 </div>
                 <div class="hidden max-lg:flex justify-end fixed mt-8 left-0 right-0 hover:cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 215 215" fill="none" class="p-3 w-12 h-12 ring-slate-900/5 flex items-center justify-center rounded-full hover:bg-black group transition hover:duration-100 delay-75 ease-linear">
-                <path d="M25.9398 107.358H186.977" stroke="black" stroke-width="17.893" stroke-linecap="round" stroke-linejoin="round" class=" group-hover:stroke-white transition group-hover:duration-100 delay-75 ease-linear"/>
-                <path d="M79.6185 161.037L25.9396 107.358L79.6185 53.679" stroke="black" stroke-width="17.893" stroke-linecap="round" stroke-linejoin="round" class=" group-hover:stroke-white transition group-hover:duration-100 delay-75 ease-linear"/>
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 215 215" fill="none" class="p-3 w-12 h-12 ring-slate-900/5 flex items-center justify-center rounded-full hover:bg-black group transition hover:duration-100 delay-75 ease-linear">
+                        <path d="M25.9398 107.358H186.977" stroke="black" stroke-width="17.893" stroke-linecap="round" stroke-linejoin="round" class=" group-hover:stroke-white transition group-hover:duration-100 delay-75 ease-linear" />
+                        <path d="M79.6185 161.037L25.9396 107.358L79.6185 53.679" stroke="black" stroke-width="17.893" stroke-linecap="round" stroke-linejoin="round" class=" group-hover:stroke-white transition group-hover:duration-100 delay-75 ease-linear" />
+                    </svg>
+                </div>
             </div>
-            </div>
-        </div>
+        </div><Signup></Signup></>
     );
 }
 

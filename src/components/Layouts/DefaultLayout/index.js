@@ -1,7 +1,6 @@
 import Header from '~/components/Layouts/PartialLayout/Header'; // goi header ra
 import Sidebar from './Sidebar'; // goi sidebar ra
 import Footer from './Footer'; // goi footer ra
-import tailwind from '~/components/GlobalStyles/css/tailwind.css'; // goi tailwind
 // const cx = classNames.bind(tailwind);
 function    DefaultLayout({children}) { // main Layout, children la thg do~ ra luon thay doi, la body
     return (
