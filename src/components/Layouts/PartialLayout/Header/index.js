@@ -64,8 +64,8 @@ function Header() {
                 </div>
                 <div className="hidden max-lg:flex justify-end fixed mt-8 left-0 right-0 hover:cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 215 215" fill="none" className="p-3 w-12 h-12 ring-slate-900/5 flex items-center justify-center rounded-full hover:bg-black group transition hover:duration-100 delay-75 ease-linear">
-                <path d="M25.9398 107.358H186.977" stroke="black" stroke-width="17.893" stroke-linecap="round" stroke-linejoin="round" className=" group-hover:stroke-white transition group-hover:duration-100 delay-75 ease-linear"/>
-                <path d="M79.6185 161.037L25.9396 107.358L79.6185 53.679" stroke="black" stroke-width="17.893" stroke-linecap="round" stroke-linejoin="round" className=" group-hover:stroke-white transition group-hover:duration-100 delay-75 ease-linear"/>
+                <path d="M25.9398 107.358H186.977" stroke="black" strokeWidth="17.893" stroke-linecap="round" stroke-linejoin="round" className=" group-hover:stroke-white transition group-hover:duration-100 delay-75 ease-linear"/>
+                <path d="M79.6185 161.037L25.9396 107.358L79.6185 53.679" stroke="black" strokeWidth="17.893" stroke-linecap="round" stroke-linejoin="round" className=" group-hover:stroke-white transition group-hover:duration-100 delay-75 ease-linear"/>
                 </svg>
             </div>
         </div><Signup></Signup>
