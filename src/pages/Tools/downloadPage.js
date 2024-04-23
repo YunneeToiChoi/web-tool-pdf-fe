@@ -1,9 +1,53 @@
-function downloadPage()
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
+import { fireEvent } from '@testing-library/react';
+
+function DownloadPage()
 {
+    const location = useLocation();
+    const [filePath, setFilePath] = useState('');
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const path = searchParams.get('file');
+        setFilePath(path);
+    }, [location]);
+
+    const handleRequestfile = (filePath) => {
+        console.log(filePath);
+        axios.post('http://localhost:8080/pdf-tools/pdf-split/download/agree', {
+            filePath: filePath,
+        }, {
+            responseType: 'blob' // Xác định kiểu dữ liệu trả về là blob
+        })
+        .then(response => {
+            // Xử lý phản hồi từ backend
+            const blob = new Blob([response.data], { type: 'application/pdf' });
+            const downloadUrl = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.download = 'downloaded_file.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        })
+        .catch(error => {
+            // Xử lý lỗi
+            console.error('Error:', error);
+        });
+    };
+    
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleRequestfile(filePath);
+    };
+
     return(
         <div className="m-auto mt-32">
             <label className=" block cursor-pointer w-full h-full">
-                    <form className=" w-full h-full " action="download/agree" method="GET">
+                    <form className="formContainer w-full h-full" onSubmit={handleSubmit} method="POST">
                         <label className=" cursor-pointer w-full h-full">
                             <input type="hidden" className="absolute h-[1px] w-[1px] overflow-hidden" name="file" value="{{pdfFilePathWithExtension}}"/>
                             <button className=" gap-8 flex items-center flex-col text-center py-12 px-36 border-dashed border-[2px] border-gray-300 hover:border-gray-500 rounded-lg w-full h-full group transition hover:duration-100 delay-100 ease-linear" type="submit">
@@ -20,4 +64,4 @@ function downloadPage()
         </div>
     )
 }
-export default downloadPage;
+export default DownloadPage;

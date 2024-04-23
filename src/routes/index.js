@@ -11,7 +11,7 @@ const publicRoutes=[
     {path : '/pdf-tools', component: Tools},
     {path : '/pdf-tools/pdf-split', component: Tools_Split},
     {path : '/pdf-tools/pdf-split/option', component: Tools_Split_Option},
-    {path : '/pdf-tools/downloadPage', component: Tools_Split_Download},
+    {path : '/pdf-tools/pdf-split/download', component: Tools_Split_Download},
 ]
 const privateRoutes=[
     
