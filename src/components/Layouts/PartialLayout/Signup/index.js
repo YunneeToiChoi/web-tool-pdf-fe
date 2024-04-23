@@ -2,15 +2,15 @@
 function signUp()
 {
     return(
-        <div class="hidden signUp_form fixed top-0 left-0 bottom-0 right-0 z-30">
-    <div class="Overlay_res animate-fadeIn fixed right-0 bottom-0 top-0 left-0 bg-black bg-opacity-35"></div>
-    <div class=" box_form_res fixed animate-fadeInRight right-0 w-5/12 max-xl:w-6/12 max-lg:11/12 max-md:w-full rounded-tl-3xl rounded-bl-3xl h-full z-10 flex flex-col bg-white shadow-2xl  items-center">
-  <div class=" relative w-full px-40 max-2xl:px-20 max-[1060px]:px-12 max-[950px]:px-6 max-md:px-36 max-[690px]:px-28 max-[600px]:px-20 max-[480px]:px-4 py-10">
-    <div class=" closed_res absolute top-4 left-4 cursor-pointer w-6 h-6 ">
-      <svg class=" hover:scale-125 ease-in-out delay-130 duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+        <div className="hidden signUp_form fixed top-0 left-0 bottom-0 right-0 z-30">
+    <div className="Overlay_res animate-fadeIn fixed right-0 bottom-0 top-0 left-0 bg-black bg-opacity-35"></div>
+    <div className=" box_form_res fixed animate-fadeInRight right-0 w-5/12 max-xl:w-6/12 max-lg:11/12 max-md:w-full rounded-tl-3xl rounded-bl-3xl h-full z-10 flex flex-col bg-white shadow-2xl  items-center">
+  <div className=" relative w-full px-40 max-2xl:px-20 max-[1060px]:px-12 max-[950px]:px-6 max-md:px-36 max-[690px]:px-28 max-[600px]:px-20 max-[480px]:px-4 py-10">
+    <div className=" closed_res absolute top-4 left-4 cursor-pointer w-6 h-6 ">
+      <svg className=" hover:scale-125 ease-in-out delay-130 duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
     </div>
-    <div class=" z-10 flex gap-5 max-w-56 items-center justify-between mb-[80px] max-xl:mb-[60px] max-lg:mb-[40px] max-md:mb-[20px]">
-      <div class="">
+    <div className=" z-10 flex gap-5 max-w-56 items-center justify-between mb-[80px] max-xl:mb-[60px] max-lg:mb-[40px] max-md:mb-[20px]">
+      <div className="">
         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
             <path d="M20.547 37.289L28.301 41.766L49.998 54.293L79.246 37.295L49.796 20.291L20.547 37.289Z" fill="black"/>
             <path d="M51.24 56.6339L51.353 64.9999H80V65.0869L80.342 39.6899L51.24 56.6339Z" fill="black"/>
@@ -49,67 +49,67 @@ function signUp()
             <path d="M97.318 67H2.37001C2.11601 67 1.91101 67.246 1.91101 67.5C1.91101 67.754 2.11601 68 2.37001 68H97.319C97.573 68 97.779 67.754 97.779 67.5C97.779 67.246 97.572 67 97.318 67Z" fill="black"/>
         </svg>
       </div>
-      <div class="">
-        <blockquote class=" gap-2 flex flex-nowrap text-2xl font-semibold italic text-center text-slate-900">
-          <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black relative inline-block ">
-            <span class="relative text-white">Tools</span>
+      <div className="">
+        <blockquote className=" gap-2 flex flex-nowrap text-2xl font-semibold italic text-center text-slate-900">
+          <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black relative inline-block ">
+            <span className="relative text-white">Tools</span>
           </span>
           PDF
         </blockquote>
       </div>
     </div>
-    <div class=" absolute top-0  right-[-30%] w-[120%] h-[120%] stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)]">
-      <svg viewBox="0 0 1026 1026" fill="none" aria-hidden="true" class="absolute inset-0 h-full w-full animate-spin-slow animate-spin-slow">
-        <path d="M1025 513c0 282.77-229.23 512-512 512S1 795.77 1 513 230.23 1 513 1s512 229.23 512 512Z" stroke="#D4D4D4" stroke-opacity="0.7"></path>
-        <path d="M513 1025C230.23 1025 1 795.77 1 513" stroke="url(#:S1:-gradient-1)" stroke-linecap="round"></path>
+    <div className=" absolute top-0  right-[-30%] w-[120%] h-[120%] stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)]">
+      <svg viewBox="0 0 1026 1026" fill="none" aria-hidden="true" className="absolute inset-0 h-full w-full animate-spin-slow animate-spin-slow">
+        <path d="M1025 513c0 282.77-229.23 512-512 512S1 795.77 1 513 230.23 1 513 1s512 229.23 512 512Z" stroke="#D4D4D4" strokeOpacity="0.7"></path>
+        <path d="M513 1025C230.23 1025 1 795.77 1 513" stroke="url(#:S1:-gradient-1)" strokeLinecap="round"></path>
         <defs>
           <linearGradient id=":S1:-gradient-1" x1="1" y1="513" x2="1" y2="1025" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#06b6d4"></stop>
-            <stop offset="1" stop-color="#06b6d4" stop-opacity="0"></stop>
+            <stop stopColor="#06b6d4"></stop>
+            <stop offset="1" stopColor="#06b6d4" stopOpacity="0"></stop>
           </linearGradient>
         </defs>
       </svg>
-      <svg viewBox="0 0 1026 1026" fill="none" aria-hidden="true" class="absolute inset-0 h-full w-full animate-spin-slow">
-        <path d="M913 513c0 220.914-179.086 400-400 400S113 733.914 113 513s179.086-400 400-400 400 179.086 400 400Z" stroke="#D4D4D4" stroke-opacity="0.7"></path>
-        <path d="M913 513c0 220.914-179.086 400-400 400" stroke="url(#:S1:-gradient-2)" stroke-linecap="round"></path>
+      <svg viewBox="0 0 1026 1026" fill="none" aria-hidden="true" className="absolute inset-0 h-full w-full animate-spin-slow">
+        <path d="M913 513c0 220.914-179.086 400-400 400S113 733.914 113 513s179.086-400 400-400 400 179.086 400 400Z" stroke="#D4D4D4" strokeOpacity="0.7"></path>
+        <path d="M913 513c0 220.914-179.086 400-400 400" stroke="url(#:S1:-gradient-2)" strokeLinecap="round"></path>
         <defs>
           <linearGradient id=":S1:-gradient-2" x1="913" y1="513" x2="913" y2="913" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#06b6d4"></stop>
-            <stop offset="1" stop-color="#06b6d4" stop-opacity="0"></stop>
+            <stop stopColor="#06b6d4"></stop>
+            <stop offset="1" stopColor="#06b6d4" stopOpacity="0"></stop>
           </linearGradient>
         </defs>
       </svg>
     </div>
-    <form class=" flex flex-col gap-3 w-full" method="POST" action="/post-crud">
-      <h2 class=" pl-3 font-display font-semibold text-2xl text-neutral-950">Get started for free</h2>
-      <div class="isolate mt-6 -space-y-px rounded-2xl bg-white h-full">
-        <div class="group relative z-0 transition-all focus-within:z-10">
-          <input type="email" name="email" id=":S1:" autocomplete="name" placeholder=" " class="peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl" />
-          <label for=":S1:" class="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950">
+    <form className=" flex flex-col gap-3 w-full" method="POST" action="/post-crud">
+      <h2 className=" pl-3 font-display font-semibold text-2xl text-neutral-950">Get started for free</h2>
+      <div className="isolate mt-6 -space-y-px rounded-2xl bg-white h-full">
+        <div className="group relative z-0 transition-all focus-within:z-10">
+          <input type="email" name="email" id=":S1:" autoComplete="name" placeholder=" " className="peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl" />
+          <label htmlFor=":S1:" className="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950">
           Email
           </label>
         </div>
-        <div class="group relative z-0 transition-all focus-within:z-10">
-          <input type="password" name="password" id=":S2:" autocomplete="email" placeholder=" " class="peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl"  />
-          <label for=":S2:" class="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950">
+        <div className="group relative z-0 transition-all focus-within:z-10">
+          <input type="password" name="password" id=":S2:" autoComplete="email" placeholder=" " className="peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl"  />
+          <label htmlFor=":S2:" className="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950">
             Password
           </label>
         </div>
-        <div class="group relative z-0 transition-all focus-within:z-10">
-          <input type="number" name="numberPhone" id=":S3:" autocomplete="organization" placeholder=" " class="peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl" />
-          <label for=":S3:" class="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950">
+        <div className="group relative z-0 transition-all focus-within:z-10">
+          <input type="number" name="numberPhone" id=":S3:" autoComplete="organization" placeholder=" " className="peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl" />
+          <label htmlFor=":S3:" className="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950">
           NumberPhone
           </label>
         </div>
-        <div class="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
-          <div class="flex">
-            <button class=" mx-auto transition hover:duration-300 ease-in-out delay-75 bg-black  duration-300 text-white px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" type="submit">Sign Up</button>
+        <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
+          <div className="flex">
+            <button className=" mx-auto transition hover:duration-300 ease-in-out delay-75 bg-black  duration-300 text-white px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" type="submit">Sign Up</button>
           </div>
         </div>
       </div>  
     </form>
-    <div class=" flex justify-center z-10">
-        <p class="mt-2 text-sm text-gray-700 ">Already registered? <a class="font-medium text-blue-600 hover:underline hover:cursor-pointer" href="#">Sign in</a> to your account.</p>
+    <div className=" flex justify-center z-10">
+        <p className="mt-2 text-sm text-gray-700 ">Already registered? <a className="font-medium text-blue-600 hover:underline hover:cursor-pointer" href="#">Sign in</a> to your account.</p>
     </div>
   </div>
 </div>
