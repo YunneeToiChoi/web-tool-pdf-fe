@@ -1,7 +1,7 @@
 
 function Sidebar() {
     return (
-        <div className="nav_menu top-28  fixed z-20 w-16 h-[85%] bg-black py-6 rounded-[12px] shadow-2xl min-h-[500px]">
+        <div className="nav_menu top-28  fixed w-16 h-[85%] bg-black py-6 rounded-[12px] shadow-2xl min-h-[500px]">
             <div className=" flex flex-col h-full">
                 <div className=" flex flex-col">
                     <a href="#" className=" mb-3">
