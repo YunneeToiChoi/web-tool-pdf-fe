@@ -72,7 +72,7 @@ function Split() {
             </div>
             <div className=" w-full min-h-80 h-auto flex">
                 <label className=" block cursor-pointer w-full">
-                <form className="formUpload_Container w-full h-full" action="" method="POST" enctype="multipart/form-data">
+                <form className="formUpload_Container w-full h-full" action="" method="POST" encType="multipart/form-data">
                         <label className=" cursor-pointer">
                             <input className="formUpload_input absolute h-[1px] w-[1px] overflow-hidden" type="file" name="pdfFilePath" accept=".pdf" required  />
                         </label>

@@ -1,5 +1,5 @@
 import "./GlobalStyles.scss"
-import"~/input.css"
+import "./css/tailwind.css"
 function GlobalStyles({children}){
     return children;
 }
