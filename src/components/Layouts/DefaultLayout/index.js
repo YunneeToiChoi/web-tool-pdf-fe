@@ -2,7 +2,7 @@ import Header from '~/components/Layouts/PartialLayout/Header'; // goi header ra
 import Sidebar from './Sidebar'; // goi sidebar ra
 import Footer from './Footer'; // goi footer ra
 // const cx = classNames.bind(tailwind);
-function    DefaultLayout({children}) { // main Layout, children la thg do~ ra luon thay doi, la body
+function DefaultLayout({children}) { // main Layout, children la thg do~ ra luon thay doi, la body
     return (
         <div className="container-body w-full">
             <div className="w-full h-screen flex">
