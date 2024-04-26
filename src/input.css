@@ -30,4 +30,13 @@
     .scrollable::-webkit-scrollbar {
         @apply hidden;
       }
+
+    .signUp-form.active
+    {
+      @apply opacity-100 visible animate-fadeInRight;
+    }
+    .signUp-form.inactive
+    {
+      @apply opacity-0 hidden animate-fadeOutRight;
+    }
  }
