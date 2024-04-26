@@ -731,6 +731,17 @@ video {
  .animate-spin-slow {
   animation: spin 6s linear infinite;
 }
+ @keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 2;
+  }
+}
+ .animate-fadeOut {
+  animation: fadeOut 0.2s ease-in;
+}
  .cursor-pointer {
   cursor: pointer;
 }
@@ -887,6 +898,9 @@ video {
 }
  .bg-opacity-\[0\.1\] {
   --tw-bg-opacity: 0.1;
+}
+ .bg-opacity-0 {
+  --tw-bg-opacity: 0;
 }
  .bg-clip-padding {
   background-clip: padding-box;
@@ -1158,11 +1172,20 @@ video {
  .delay-75 {
   transition-delay: 75ms;
 }
+ .delay-1000 {
+  transition-delay: 1000ms;
+}
  .duration-200 {
   transition-duration: 200ms;
 }
  .duration-300 {
   transition-duration: 300ms;
+}
+ .duration-500 {
+  transition-duration: 500ms;
+}
+ .duration-150 {
+  transition-duration: 150ms;
 }
  .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

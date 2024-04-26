@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext,useEffect } from 'react';
 import Login from '~/components/Layouts/PartialLayout/Login'
 import SignUp from '~/components/Layouts/PartialLayout/SignUp'
 import { ContextParent } from '../Header';
@@ -6,12 +6,17 @@ function FormBox( ) {
     let { open_login, setOpen_login, open_ovp, setOpen_ovp, open_signup, setOpen_signup } =useContext(ContextParent);
     return(
         <>
-        <div  className={` z-30 Overlay_res hover:cursor-pointer animate-fadeIn fixed right-0 bottom-0 top-0 left-0 bg-black bg-opacity-10 ${open_ovp ? 'visible':'hidden'}`}  
-                onClick={()=>{setOpen_ovp(!open_ovp);
-                setTimeout(()=>{
-                    setOpen_login(open_login=false);
-                    setOpen_signup(open_signup=false)
-                },300)}}></div>
+        <div id='Overlay_res' className={` fixed z-30 hover:cursor-pointer transition duration-300 delay-100 ease-linear right-0 bottom-0 top-0 left-0 bg-black ${open_ovp ? 'bg-opacity-10':'bg-opacity-0'}`}  
+                onClick={() => {
+                    setOpen_ovp(!open_ovp);
+                    setTimeout(() => {
+                      setOpen_login(open_login = false);
+                      setOpen_signup(open_signup = false);
+                      if (open_ovp) {
+                        document.getElementById('Overlay_res').classList.add('hidden');
+                      }
+                    }, 300);
+                  }}></div>
                 <div  className={` z-30 box_form_res fixed transition duration-300 delay-100 ease-linear right-0 w-5/12 max-xl:w-6/12 max-lg:11/12 max-md:w-full rounded-tl-xl rounded-bl-xl h-full flex flex-col bg-white shadow-2xl items-center ${open_ovp ? 'translate-x-0':'translate-x-full'}`} >
                 <div className=" relative w-full px-40 max-2xl:px-20 max-[1060px]:px-12 max-[950px]:px-6 max-md:px-36 max-[690px]:px-28 max-[600px]:px-20 max-[480px]:px-4 py-10">
                 <div className=" closed_res absolute top-4 right-4 cursor-pointer w-6 h-6 z-20 " 
