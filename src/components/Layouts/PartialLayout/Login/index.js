@@ -8,22 +8,26 @@ function Login()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-
+    const [authenticated, setAuthenticated] = useState(false);
     const handleLogin = async (e) => {
         e.preventDefault();
         
         try {
-            const response = await axios.post('http://localhost:8080/login', {
+            const response = await axios.post('http://localhost:8080/api-login', {
                 email: email,
                 password: password,
-            });
-            
-            if (response.status === 200) {
-                alert('Login successful');
-                // Thực hiện hành động cần thiết sau khi đăng nhập thành công
-            } else {
-                alert('Login failed');
-            }
+            })
+              .then((response) => {
+                console.log(response);
+                alert('Succes');
+                setAuthenticated(true);
+              })
+              .catch((err) => {
+                alert('error');
+                console.log(err);
+              });
+          
+           
         } catch (error) {
             if (error.response && error.response.data && error.response.data.message) {
                 setError(error.response.data.message);
