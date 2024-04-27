@@ -1,24 +1,35 @@
-import React from 'react';
-import img from '~/assets/images/images.js'
+import React, { useEffect, useState } from 'react';
 
 function PreviewsPDF() {
-    const renderImages = () => {
-        const images = [];
-        for (let i = 0; i < 20; i++) {
-            images.push(
-                    <div key={i} className="">
-                        <img className="  border-[1px] border-gray-300 " src={img.testPreviewPDF} alt=""/>
-                    </div>
-            );
-        }
-        return images;
-    };
+    // Get query file path 
+    const urlParams = new URLSearchParams(window.location.search);
+    const pdfFilePath = urlParams.get('pdfFilePath');
+
+    // State to store page contents
+    const [pagesContent, setPagesContent] = useState([]);
+
+    useEffect(() => {
+        // Fetch PDF pages content when component mounts
+        const fetchPagesContent = async () => {
+            try {
+                const response = await fetch(`http://localhost:8080/pdf-tools/pdf-preview-all-pages?pdfFilePath=${encodeURIComponent(pdfFilePath)}`);
+                const data = await response.json();
+                setPagesContent(data.pagesContent);
+            } catch (error) {
+                console.error('Error fetching PDF pages content:', error);
+            }
+        };
+        
+        fetchPagesContent();
+    }, [pdfFilePath]); // Fetch content when pdfFilePath changes
+
     return (
-        <div className=" grid-cols-8 max-2xl:grid-cols-7 max-xl:grid-cols-5 max-lg:grid-cols-4 max-md:grid-cols-2 max-sm:grid-cols-1 grid gap-4">
-            {renderImages()}
+        <div className="grid grid-cols-1 gap-4">
+            {/* {pagesContent.length > 0 && pagesContent.map((pageContent, index) => (
+                <iframe key={index} src={URL.createObjectURL(new Blob([pageContent], { type: 'application/pdf' }))} title={`Page ${index + 1}`} />
+            ))} */}
         </div>
     );
 }
-
 
 export default PreviewsPDF;
