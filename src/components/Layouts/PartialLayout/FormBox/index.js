@@ -1,30 +1,46 @@
-import { useContext,useEffect } from 'react';
+import { useContext,useState,useEffect } from 'react';
 import Login from '~/components/Layouts/PartialLayout/Login'
 import SignUp from '~/components/Layouts/PartialLayout/SignUp'
 import { ContextParent } from '../Header';
 function FormBox( ) {
-    let { open_login, setOpen_login, open_ovp, setOpen_ovp, open_signup, setOpen_signup } =useContext(ContextParent);
+    const { open_login, setOpen_login, open_ovp, setOpen_ovp, open_signup, setOpen_signup } = useContext(ContextParent);
+    const [overlayClicked, setOverlayClicked] = useState(false);
+
+    const handleOverlayClick = () => {
+        if (!overlayClicked) {
+            setOpen_ovp(!open_ovp);
+            setOverlayClicked(true);
+            setTimeout(() => {
+                setOpen_login(false);
+                setOpen_signup(false);
+                setOverlayClicked(false);
+            }, 300);
+        }
+    };
+
+    useEffect(() => {
+        const Ovp = document.getElementById('Overlay_res');
+        if (Ovp) {
+            const handleOpenOvpChange = () => {
+                if (open_ovp) {
+                } else {
+                    Ovp.classList.add('fixed');
+                    setTimeout(() => {
+                        Ovp.classList.remove('fixed');
+                    }, 300);
+                }
+            };
+            handleOpenOvpChange();
+        }
+    }, [open_ovp]);
     return(
         <>
-        <div id='Overlay_res' className={` fixed z-30 hover:cursor-pointer transition duration-300 delay-100 ease-linear right-0 bottom-0 top-0 left-0 bg-black ${open_ovp ? 'bg-opacity-10':'bg-opacity-0'}`}  
-                onClick={() => {
-                    setOpen_ovp(!open_ovp);
-                    setTimeout(() => {
-                      setOpen_login(open_login = false);
-                      setOpen_signup(open_signup = false);
-                      if (open_ovp) {
-                        document.getElementById('Overlay_res').classList.add('hidden');
-                      }
-                    }, 300);
-                  }}></div>
+        <div id='Overlay_res' className={` z-30 hover:cursor-pointer transition duration-300 delay-100 ease-linear right-0 bottom-0 top-0 left-0 bg-black ${open_ovp ? 'bg-opacity-10 fixed':'bg-opacity-0'}`}  
+                onClick={handleOverlayClick}></div>
                 <div  className={` z-30 box_form_res fixed transition duration-300 delay-100 ease-linear right-0 w-5/12 max-xl:w-6/12 max-lg:11/12 max-md:w-full rounded-tl-xl rounded-bl-xl h-full flex flex-col bg-white shadow-2xl items-center ${open_ovp ? 'translate-x-0':'translate-x-full'}`} >
                 <div className=" relative w-full px-40 max-2xl:px-20 max-[1060px]:px-12 max-[950px]:px-6 max-md:px-36 max-[690px]:px-28 max-[600px]:px-20 max-[480px]:px-4 py-10">
                 <div className=" closed_res absolute top-4 right-4 cursor-pointer w-6 h-6 z-20 " 
-                onClick={()=>{setOpen_ovp(!open_ovp);
-                setTimeout(()=>{
-                    setOpen_login(open_login=false);
-                    setOpen_signup(open_signup=false)
-                },300)}} >
+                onClick={handleOverlayClick}>
                     <svg className=" hover:scale-105 ease-in-out delay-130 duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
                 </div>
                 <div className="flex gap-5 max-w-56 items-center justify-between mb-[80px] max-xl:mb-[60px] max-lg:mb-[40px] max-md:mb-[20px]">
