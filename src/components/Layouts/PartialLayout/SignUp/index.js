@@ -18,6 +18,7 @@ function SignUp()
     })
     .then(() => {
       alert('Register Success')
+      window.location.reload()
       // to do something with flow layout 
     })
     .catch((err) => {

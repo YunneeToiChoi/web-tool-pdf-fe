@@ -8,7 +8,7 @@ function Login()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-    const [authenticated, setAuthenticated] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const handleLogin = async (e) => {
         e.preventDefault();
         
@@ -20,7 +20,9 @@ function Login()
               .then((response) => {
                 console.log(response);
                 alert('Succes');
-                setAuthenticated(true);
+                setIsLoggedIn(true);
+                localStorage.setItem('token', response.data.token);
+                window.location.reload()
               })
               .catch((err) => {
                 alert('error');

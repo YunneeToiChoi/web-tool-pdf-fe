@@ -1,12 +1,29 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import FormBox from '~/components/Layouts/PartialLayout/FormBox'
 
 export let ContextParent=createContext();
 function Header() {
 
-    let [open_login,setOpen_login]=useState(false);
-    let [open_ovp,setOpen_ovp]=useState(false);
-    let [open_signup,setOpen_signup]=useState(false);
+    let [open_login, setOpen_login] = useState(false);
+    let [open_ovp, setOpen_ovp] = useState(false);
+    let [open_signup, setOpen_signup] = useState(false);
+    let [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        // Kiểm tra xem có thông tin đăng nhập trong Local Storage không
+        const token = localStorage.getItem('token');
+        if (token) {
+            // Có thông tin đăng nhập, cập nhật trạng thái đăng nhập
+            setIsLoggedIn(true);
+        }
+    }, []);
+
+    const handleLogout = () => {
+        // Xóa token khỏi Local Storage
+        localStorage.removeItem('token');
+        // Cập nhật trạng thái đăng nhập
+        setIsLoggedIn(false);
+    };
 
     return (
         <ContextParent.Provider value={{ open_login, setOpen_login, open_ovp, setOpen_ovp, open_signup, setOpen_signup }}>
@@ -21,12 +38,22 @@ function Header() {
                                 <ItemHeader linkTitle={"/"} Title={"Company"}/>
                             </div>
                             <div className=" w-52 flex justify-between items-center ml-10">
-                                <button className="transition hover:duration-300 ease-in-out delay-75 bg-black  duration-300 text-white px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" onClick={()=>{setOpen_ovp(!open_ovp);setOpen_login(!open_login)}}>
-                                    Login
-                                </button>
-                                <button className="btn_res transition hover:duration-300 ease-in-out delay-75 bg-white hover:bg-[#F9F9F9] duration-300 text-black px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" onClick={()=>{setOpen_ovp(!open_ovp);setOpen_signup(!open_signup)}}>
-                                sign up
-                                </button>
+                                {isLoggedIn ? (
+                                    <div className=" w-52 flex justify-between items-center ml-10">
+                                        <button className="transition hover:duration-300 ease-in-out delay-75 bg-black  duration-300 text-white px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" onClick={handleLogout}>
+                                            Logout
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <div className=" w-52 flex justify-between items-center ml-10">
+                                        <button className="transition hover:duration-300 ease-in-out delay-75 bg-black  duration-300 text-white px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" onClick={()=>{setOpen_ovp(!open_ovp);setOpen_login(!open_login)}}>
+                                            Login
+                                        </button>
+                                        <button className="btn_res transition hover:duration-300 ease-in-out delay-75 bg-white hover:bg-[#F9F9F9] duration-300 text-black px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" onClick={()=>{setOpen_ovp(!open_ovp);setOpen_signup(!open_signup)}}>
+                                            Sign up
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         </div>
                         <div className="border-b-[1px] w-full"></div>
