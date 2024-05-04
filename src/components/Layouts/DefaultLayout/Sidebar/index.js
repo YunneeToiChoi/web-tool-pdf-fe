@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 function Sidebar() {
     return (
         <div className="nav_menu top-28  fixed w-16 h-[85%] bg-black py-6 rounded-[12px] shadow-2xl min-h-[500px]">
@@ -73,13 +73,13 @@ function ItemNav(props)
 {
     return(
         <li className=" hover:bg-white hover:bg-opacity-15 group transition ease-linear rounded-lg">
-            <a href={props.link} className="">
+            <Link to={props.link} className="">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" className=" w-12 stroke-gray-500 p-3 group-hover:stroke-white transition ease-linear delay-75">
                 {props.paths.map((path, index) => (
                     <path key={index} strokeLinecap="round" strokeLinejoin="round" d={path}></path>
                 ))}
             </svg>
-            </a>
+            </Link>
         </li>
     )
 }

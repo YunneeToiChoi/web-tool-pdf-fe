@@ -37,7 +37,7 @@ function Header() {
                                 <ItemHeader linkTitle={"/"} Title={"Marketplace"}/>
                                 <ItemHeader linkTitle={"/"} Title={"Company"}/>
                             </div>
-                            <div className=" w-52 flex justify-between items-center ml-10">
+                            <div className=" flex justify-between items-center ml-10">
                                 {isLoggedIn ? (
                                     <div className=" w-52 flex justify-between items-center ml-10">
                                         <button className="transition hover:duration-300 ease-in-out delay-75 bg-black  duration-300 text-white px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" onClick={handleLogout}>
@@ -45,11 +45,11 @@ function Header() {
                                         </button>
                                     </div>
                                 ) : (
-                                    <div className=" w-52 flex justify-between items-center ml-10">
-                                        <button className="transition hover:duration-300 ease-in-out delay-75 bg-black  duration-300 text-white px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" onClick={()=>{setOpen_ovp(!open_ovp);setOpen_login(!open_login)}}>
+                                    <div className=" w-full gap-3 flex justify-between items-center ml-10">
+                                        <button className=" block transition hover:duration-300 ease-in-out delay-75 bg-black  duration-300 text-white px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" onClick={()=>{setOpen_ovp(!open_ovp);setOpen_login(!open_login)}}>
                                             Login
                                         </button>
-                                        <button className="btn_res transition hover:duration-300 ease-in-out delay-75 bg-white hover:bg-[#F9F9F9] duration-300 text-black px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" onClick={()=>{setOpen_ovp(!open_ovp);setOpen_signup(!open_signup)}}>
+                                        <button className=" btn_res transition hover:duration-300 ease-in-out delay-75 bg-white hover:bg-[#F9F9F9] duration-300 text-black px-6 py-2 rounded-lg font-bold text-center hover:-translate-y-1 hover:scale-100 hover:shadow-lg" onClick={()=>{setOpen_ovp(!open_ovp);setOpen_signup(!open_signup)}}>
                                             Sign up
                                         </button>
                                     </div>
